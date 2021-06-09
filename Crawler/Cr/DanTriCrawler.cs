@@ -5,7 +5,7 @@ using HtmlAgilityPack;
 
 namespace Crawler.Cr
 {
-    public class DanTriCrawler: Crawler
+    public class DanTriCrawler : Crawler
     {
         public override Article CrawlerHtml()
         {
@@ -25,10 +25,6 @@ namespace Crawler.Cr
             var time =
                 doc.DocumentNode.SelectNodes(
                     "//div[contains(@class, 'news-item')]/div[contains(@class,'news-item__content')]/div[contains(@class, 'news-item__meta')]/span");
-            Console.WriteLine(listNode.Count);
-            Console.WriteLine(image.Count);
-            Console.WriteLine(content.Count);
-            Console.WriteLine(time.Count);
             for (int i = 0; i < time.Count; i++)
             {
                 Article articleDanTri = new Article();
@@ -38,20 +34,20 @@ namespace Crawler.Cr
                 articleDanTri.Content = content.ElementAt(i).InnerText;
                 articleDanTri.Time = time.ElementAt(i).InnerText;
                 listArticleDanTri.Add(articleDanTri);
-                Console.WriteLine(articleDanTri.Url);
-                
             }
-            
+
             for (int j = 0; j < listArticleDanTri.Count; j++)
             {
-                Console.WriteLine($"Bài viết {j+1}");
+                Console.WriteLine($"Bài viết {j + 1}");
                 Console.WriteLine($"Url: dantri.com.vn{listArticleDanTri[j].Url}");
                 Console.WriteLine($"Title: {listArticleDanTri[j].Title}");
                 Console.WriteLine($"Image: {listArticleDanTri[j].Images}");
                 Console.WriteLine($"Content: {listArticleDanTri[j].Content}");
-                Console.WriteLine($"Update: {listArticleDanTri[j].Time}");
-                Console.WriteLine("-----------------------------------------------------------------------------------");
+                Console.WriteLine($"Update At: {listArticleDanTri[j].Time}");
+                Console.WriteLine(
+                    "-----------------------------------------------------------------------------------");
             }
+
             return null;
         }
     }

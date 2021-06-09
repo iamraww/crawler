@@ -36,7 +36,6 @@ namespace Crawler.Menu
                     break;
                 }
             }
-            
         }
     }
 }
