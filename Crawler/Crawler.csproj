@@ -42,11 +42,10 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Cr\Article.cs" />
-        <Compile Include="Cr\Crawler.cs" />
-        <Compile Include="Cr\DanTriCrawler.cs" />
-        <Compile Include="Cr\VnexpressCrawler.cs" />
-        <Compile Include="Menu\ApplicationMenu.cs" />
+        <Compile Include="crawler\Article.cs" />
+        <Compile Include="crawler\CrawlerDantri.cs" />
+        <Compile Include="crawler\CrawlerVnexpress.cs" />
+        <Compile Include="crawler\ICrawler.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
